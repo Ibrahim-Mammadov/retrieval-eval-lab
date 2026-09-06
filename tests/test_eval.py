@@ -7,4 +7,9 @@ class EvalTests(unittest.TestCase):
         out = evaluate(r, ["cats", "dogs"], [[0], [1]], 1)
         self.assertEqual((out.recall_at_k, out.mrr), (1.0, 1.0))
 
+    def test_recall_counts_multiple_relevant_documents(self):
+        r = TfidfRetriever(["cats sleep", "cats run", "dogs run"])
+        out = evaluate(r, ["cats"], [[0, 1]], 2)
+        self.assertEqual(out.recall_at_k, 1.0)
+
 if __name__ == "__main__": unittest.main()
