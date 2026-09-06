@@ -1,0 +1,1 @@
+# Retrieval Eval Lab\n\nDependency-free benchmark harness for testing whether a retriever returns evidence that supports a query. Includes deterministic TF-IDF retrieval, recall@k, MRR, and per-query evaluation.\n\n## Run\n\n```bash\npython -m retrieval_eval --demo\npython -m unittest discover -s tests -v\n```\n
